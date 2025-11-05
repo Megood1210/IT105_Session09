@@ -1,0 +1,16 @@
+| Entity    |Attribute       | Kiểu dữ liệu             | Vai trò                                               |
+|-----------|----------------| -------------------------| ------------------------------------------------------|
+| User      | user_id        | INT                      | Khóa chính, định danh duy nhất cho mỗi người dùng     |
+|           | full_name      | VARCHAR(100)             | Họ và tên của người dùng                              |
+|           | email          | VARCHAR(100)             | Địa chỉ email dùng để đăng nhập hoặc nhận thông báo   |
+|           | role           | ENUM(student, instructor)| Xác định người dùng là học viên hay giảng viên        |
+|-----------|----------------| -------------------------| ------------------------------------------------------|
+| Course    | course_id      | INT                      | Khóa chính, định danh duy nhất cho mỗi khóa học       |
+|           | course_name    | VARCHAR(150)             | Tên của khóa học                                      |
+|           | description    | TEXT                     | Mô tả nội dung và mục tiêu của khóa học               |
+|           | instructor_id  | INT                      | Khóa ngoại, liên kết đến User có vai trò là giảng viên|
+|-----------|----------------| -------------------------| ------------------------------------------------------|
+| Enrollment| enrollment_id  | INT                      | Khóa chính, định danh duy nhất cho mỗi lượt đăng ký   |
+|           | user_id        | INT                      | Khóa ngoại, liên kết đến User là người học            |
+|           | course_id      | INT                      | Khóa ngoại, liên kết đến Course mà người dùng đăng ký |
+|           | enrollment_date| DATE                     | Ngày người dùng đăng ký tham gia khóa học             |

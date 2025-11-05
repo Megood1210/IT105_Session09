@@ -1,0 +1,30 @@
+1. Bảng chuẩn hóa lên 1NF
+| Mã hóa đơn(PK)| Tên khách hàng| Số điện thoại| Tên sản phẩm| Tổng tiền|
+|---------------|---------------|--------------|-------------|----------|
+| HD001         | An            | 0912345678   | Bút bi      | 50,000   |
+| HD001         | An            | 0912345678   | Vở          | 50,000   |
+| HD001         | An            | 0912345678   | Thước       | 50,000   |
+| HD00          | Bình          | 0987654321   | Sách        | 80,000   |
+| HD002         | Bình          | 0987654321   | Bút chì     | 80,000   |
+2. Bảng chuẩn hóa lên 2NF
+ -Bảng hóa đơn
+   | Mã hóa đơn (PK)| Tên khách hàng| Số điện thoại|Tổng tiền|
+   |----------------|---------------|--------------|---------|
+   | HD001          | An            | 0912345678   | 50,000  |
+   | HD002          | Bình          | 0987654321   | 80,000  |
+ -Bảng Chi tiết hóa đơn
+   |Mã hóa đơn (FK)| Tên sản phẩm|
+   |---------------|-------------|
+   | HD001         | Bút bi      |
+   | HD001         | Vở          |
+   | HD001         | Thước       |
+   | HD002         | Sách        |
+   | HD002         | Bút chì     |
+3. Bảng chuẩn hóa lên 3NF
+| Bảng                 | Thuộc tính                  | Khóa chính (PK)           |Khóa ngoại (FK)       |
+|----------------------|-----------------------------|---------------------------|----------------------|
+| Bảng Khách hàng      | Mã KH, Tên KH, SĐT          | Mã KH                     |                      |
+| Bảng Hóa đơn         | Mã hóa đơn, Mã KH, Tổng tiền| Mã hóa đơn                | Mã KH -> Customer    |
+| Bảng Chi tiết hóa đơn| Mã hóa đơn, Tên sản phẩm    | (Mã hóa đơn, Tên sản phẩm)| Mã hóa đơn -> Invoice|
+
+   
